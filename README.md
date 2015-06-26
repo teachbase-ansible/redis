@@ -25,4 +25,4 @@ Example Playbook
 
   - hosts: servers
     roles:
-       - palkan.ruby
+       - palkan.redis
