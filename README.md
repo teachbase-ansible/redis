@@ -22,7 +22,8 @@ Role Variables
 
 Example Playbook
 -------------------------
-
+```yml
   - hosts: servers
     roles:
        - palkan.redis
+```
