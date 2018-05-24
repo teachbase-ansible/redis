@@ -1,2 +1,7 @@
-- name: Restart Redis
+- name: Restart Redis Service
   service: name=redis state=restarted
+  when: os_version|int <= 14.04
+
+- name: Restart Redis Systemd
+  systemd: name=redis state=restarted
+  when: os_version|int > 14.04

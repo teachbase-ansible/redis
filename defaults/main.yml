@@ -1,3 +1,6 @@
-redis_version: 3.0.2
+redis_version: 4.0.9
 redis_tmp_path: /tmp
 redis_upstart_conf: "upstart_redis.conf"
+redis_systemd_conf: "redis-server.service"
+os_name: "{{ ansible_distribution }}" # e.g. "Ubuntu"
+os_version: "{{ ansible_distribution_version }}" # e.g. "16.04"

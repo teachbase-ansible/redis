@@ -26,4 +26,11 @@
 - name: Redis | Configure Upstart
   template: src={{ redis_upstart_conf }} dest=/etc/init/redis.conf force=no
   notify:
-    - Restart Redis
+    - Restart Redis Service
+  when: os_version|int <= 14.04
+
+- name: Redis | Configure systemd
+  template: src={{ redis_systemd_conf }} dest=/etc/systemd/system/redis.service force=no
+  notify:
+    - Restart Redis Systemd
+  when: os_version|int > 14.04
